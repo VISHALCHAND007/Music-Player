@@ -32,8 +32,8 @@ function App(): React.JSX.Element {
   //conditional rendering
   if (!isPlayerReady) {
     return (
-      <SafeAreaView>
-        <ActivityIndicator />
+      <SafeAreaView style={styles.container}>
+        <ActivityIndicator style={styles.progressBar} />
       </SafeAreaView>
     );
   }
@@ -48,6 +48,11 @@ function App(): React.JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  progressBar: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
