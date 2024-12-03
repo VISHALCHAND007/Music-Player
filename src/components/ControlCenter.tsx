@@ -1,14 +1,11 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import TrackPlayer, {
-  State,
-  usePlaybackState,
-} from 'react-native-track-player';
+import TrackPlayer, {State, usePlaybackState} from 'react-native-track-player';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {playBackService} from '../../musicPlayerService';
 
 const ControlCenter = () => {
-    const playBackState = usePlaybackState();
+  const playBackState = usePlaybackState();
   //functionality/actions
   const skipToNext = async () => {
     await TrackPlayer.skipToNext();
@@ -33,7 +30,7 @@ const ControlCenter = () => {
   return (
     <View style={styles.container}>
       <Pressable onPress={skipToPrevious}>
-        <Icon size={40} name="skip-previous" style={styles.icon} />
+        <Icon size={50} name="skip-previous" style={styles.icon} />
       </Pressable>
       <Pressable onPress={() => togglePlayback(playBackState.state)}>
         <Icon
@@ -43,7 +40,7 @@ const ControlCenter = () => {
         />
       </Pressable>
       <Pressable onPress={skipToNext}>
-        <Icon size={40} name="skip-next" style={styles.icon} />
+        <Icon size={50} name="skip-next" style={styles.icon} />
       </Pressable>
     </View>
   );
@@ -51,13 +48,13 @@ const ControlCenter = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 56, 
-    flex: 1, 
-    alignItems: 'center', 
-    flexDirection: 'row'
+    marginBottom: 56,
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   icon: {
-    color: '#ffffff'
+    color: '#ffffff',
   },
 });
 

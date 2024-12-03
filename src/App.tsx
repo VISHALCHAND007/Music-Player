@@ -10,6 +10,7 @@ import {
 
 //importing the music player service methods
 import {setUpPlayer, addTracks} from '../musicPlayerService';
+import MusicPlayer from './screens/MusicPlayer';
 
 function App(): React.JSX.Element {
   //defining the state to manage the setup
@@ -40,7 +41,8 @@ function App(): React.JSX.Element {
 
   return (
     <View style={styles.container}>
-      <Text>Music Player</Text>
+      <StatusBar barStyle={'light-content'} />
+      <MusicPlayer />
     </View>
   );
 }
