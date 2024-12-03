@@ -8,7 +8,7 @@ import TrackPlayer, {
 import {playListData} from '../constants';
 import SongInfo from '../components/SongInfo';
 import ControlCenter from '../components/ControlCenter';
-// import SongSlider from '../components/SongSlider';
+import SongSlider from '../components/SongSlider';
 //getting the device width
 const {width} = Dimensions.get('window');
 
@@ -59,7 +59,7 @@ const MusicPlayer = () => {
         keyExtractor={song=> song.id.toString()}
      />
      <SongInfo track={track}/>
-     {/* <SongSlider /> */}
+     <SongSlider />
      <ControlCenter />
     </View>
   );

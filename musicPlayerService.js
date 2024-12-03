@@ -21,7 +21,7 @@ export async function addTracks() {
     await TrackPlayer.setRepeatMode(RepeatMode.Queue)
 }
 
-export async function playBackService() {
+export async function musicPlayerService() {
     TrackPlayer.addEventListener(Event.RemotePause, () => {
         TrackPlayer.pause()
     })

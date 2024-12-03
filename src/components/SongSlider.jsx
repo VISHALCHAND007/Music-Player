@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { useProgress } from 'react-native-track-player'
-import Slider from '@react-native-community/slider'
+import Slider from '@react-native-community/slider';
 import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace'
 
 const SongSlider = () => {
@@ -9,16 +9,17 @@ const SongSlider = () => {
     return (
         <View>
             <Slider
+                style={styles.sliderContainer}
                 value={position}
                 minimumValue={0}
                 maximumValue={duration}
                 thumbTintColor='#ffffff'
                 maximumTrackTintColor='#ffffff'
-                style={symbolicateStackTrace.sliderContainer}
+
             />
             <View style={styles.timeContainer}>
-                <Text style={styles.time}>{new Date(position * 1000).toISOString.substring(15, 19)}</Text>
-                <Text style={styles.time}>{new Date((duration - position) * 1000).toISOString.substring(15, 19)}</Text>
+                <Text style={styles.time}>{new Date(position * 1000).toISOString().substring(15, 19)}</Text>
+                <Text style={styles.time}>{new Date((duration - position) * 1000).toISOString().substring(15, 19)}</Text>
             </View>
         </View>
     )
